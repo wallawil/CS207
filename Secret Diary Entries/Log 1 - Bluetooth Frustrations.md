@@ -11,7 +11,7 @@ It will prove that more elaborate instructions can be given once the project is 
 I've already acquired an HC-05 Bluetooth receiver from Amazon.
 
 
-Amazon:  Monolithic but souless, like an undead titan.\
+Amazon:  Monolithic and soulless, like an undead titan.\
 Say what you will about the undead; they are convenient.  The component got here quick!
 
 ### II.
@@ -29,7 +29,8 @@ BlueTerm
 I also need to be careful with the testing.\
 There are six pins on the HC-05 receiver.\
 **One of the pins on the receiver is fine with 5V, but the other needs 3.3V.**\
-I need to use voltage division with the limited types of resistors I have.
+I need to use voltage division with the limited types of resistors I have.\
+Otherwise, damage may occur.
 
 ### III.
 I still have not communicated **TO** the Arduino, but to my surprise received serial output **FROM** the Arduino.\
