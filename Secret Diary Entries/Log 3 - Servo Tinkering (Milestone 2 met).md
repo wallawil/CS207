@@ -1,7 +1,7 @@
 ## Servo Tinkering
 
 ### I.
-I ordered two servos from Solarbotics.com.\  
+I ordered two servos from Solarbotics.com.  
 The company ships out of Calgary and the parts got here fast.\
 The servo model is GWS S03N.\
 https://solarbotics.com/product/servo/
