@@ -52,5 +52,5 @@ In reality, we would be constantly switching between frontservo and backservo, i
 If this works, I'll be very pleased.
 
 
-As is often the case, I might find out the real cause of the problem and the real source at a later date.\
+As is often the case, I might find out the real cause of the problem and a proper solution at a much later date.\
 However, I've already spent a lot of time trying to figure out this problem.  Maybe a weird work-around is the best course of action.
