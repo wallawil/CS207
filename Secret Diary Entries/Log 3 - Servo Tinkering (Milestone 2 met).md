@@ -23,3 +23,9 @@ This would remove a need for constant corrections.\
 Also, the robot will probably move more slowly if it is constantly correcting.  Moving in a straight line is fastest.\
 Goal:  Do it right and avoid corrections.\
 Easier said than done.\
+
+### IV.
+I should mention that the 3D printing seems to have gone well.\
+I could not find a preexisting 3D object but there was a PDF which of course just contained a 2D image.\
+However, in Autodesk Fusion 360, it was fairly simple to extrude the 2D shapes into 3D objects.\
+It might be a tight fit.  My main concern was the servos wouldn't fit, because I wasn't sure of their dimensions.
