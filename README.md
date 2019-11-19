@@ -10,8 +10,8 @@ Hopefully this gives a sense of the amount of experimentation and trouble-shooti
 
 Here is a picture of the disassembled robot:
 
-![Disassembled Robot](/parts.png)
+![Disassembled Robot](/parts.jpg)
 
 Here is a picture of the assembled robot (circuit not finalized) facing off with a D&D miniature:
 
-![Bluetooth Experiments](/dnd.png)
+![Bluetooth Experiments](/dnd.jpg)
