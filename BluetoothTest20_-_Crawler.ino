@@ -14,18 +14,12 @@ SoftwareSerial BluePins(2, 3); // RX | TX
 Servo frontservo, backservo;
 
 // servo pattern for walking in a straight line
-int walkpattern[] = {60, 120, 120, 120, 120, 60, 60, 60};
+int walkforward[] = {60, 120, 120, 120, 120, 60, 60, 60};
 
-// int walkleft[] =  {50, 50, 90, 90, 50, 50, 90, 90};
+// servo position patterns to control steering
+int turnleft[] = {90, 150, 90, 90, 90, 150, 90, 90};
+int turnright[] = {90, 30, 90, 90, 90, 30, 90, 90};
 
-// this backs up and turns to the right
-// int walkright[] = {50, 130, 50, 90, 50, 130, 50, 90};
-int walkright[] = {90, 150, 90, 90, 90, 150, 90, 90};
-
-//
-// int walkleft[] = {130, 50, 130, 90, 130, 50, 130, 90};
-int walkleft[] = {90, 30, 90, 90, 90, 30, 90, 90};
-// int walkright[] = {130, 130, 90, 90, 130, 130, 90, 90};
 
 int delayT = 200;
 bool walking = false;
@@ -59,15 +53,23 @@ void setup() {
   Serial.begin(9600);
   BluePins.begin(9600);
 
-  frontservo.attach(9);
-  backservo.attach(10);
+  
  
   // keeping this line here out of respect for GemCode Studios creator
   Serial.println("Ard Object Detection & Tracking - Copyright: 2019");
 
+ // frontservo.attach(9);
+ // backservo.attach(10);
+
+  attachServos();
+  
   Serial.println("Setting servos to default positions.");
   frontservo.write(90);
   backservo.write(90);
+
+  detachServos();
+ // frontservo.detach(9);
+//  backservo.detach(10);
 }
 
 void loop() {
@@ -80,37 +82,6 @@ void loop() {
   if (stringComplete) {
     Serial.flush();
 
-    /*
-    if (inputString.startsWith("FTF:person:"))
-    {
-      Serial.println("FTF PERSON DETECTED");
-
-      bObjectFound = true;
-      searchCount = 0;
-
-      //Serial.println(inputString);
-      inputString.replace("FTF:person:", "");
-
-      int colonPos = inputString.indexOf(":");
-      if (colonPos > 0)
-      {
-        String objID = inputString.substring(0, colonPos);
-        inputString.replace(objID + ":", "");
-
-        int commaPos = inputString.indexOf(",");
-        if (commaPos > 0)
-        {
-          sXVal = inputString.substring(0, commaPos);
-          xVal = sXVal.toInt();
-          int commaPos2 = inputString.indexOf(",", commaPos + 1);
-          sYVal = inputString.substring(commaPos + 1, commaPos2);
-          yVal = sYVal.toInt();
-
-          Serial.println(sXVal + ":" + sYVal);
-        }
-      }
-    } */
-    
     //
     // Standard tensor flow person object detected. If using this note robot may get confused between different people in close proximity:
     // From tests conducted this will however work faster than the above filtered detection. For this just select Tensor Flow Object Detection Only.
@@ -156,14 +127,18 @@ void loop() {
       Serial.println(xVal);
 
       if (xVal > -100 && xVal < 100)
-        forward();
-      
+              walk(walkforward);
+        //forward();
+
+        
       else if (xVal < -100)
       // if (xVal < -100)
-        left();
+        //left();
+        walk(turnleft);
  
       else if (xVal > 100)
-        right();     
+       // right();    
+       walk(turnright); 
     }
     else
     {
@@ -177,53 +152,6 @@ void loop() {
     inputString = "";
     stringComplete = false;
   }
-/*
-  // Check if turning and control how long we continue turning before stopping.
-  if (bTurning && turnCount > maxTurnCount)
-  {
-    Serial.println("TurnCount=" + String(turnCount));
-    bTurning = false;
-    stop(1);
-    turnCount = 0;
-  }
-  else
-  {
-    turnCount++;
-  }
-
-
-  // Check if going forward and control how long we continue going forward before stopping.
-  if (bGoForward && forwardCount > maxForwardCount)
-  {
-    bGoForward = false;
-    stop(1);
-    forwardCount = 0;
-  }
-  else
-  {
-    forwardCount++;
-    delay(10);
-  }
-
-  unsigned long CurrentTime = millis();
-  unsigned long ElapsedTime = CurrentTime - StartTime;
-  if (ElapsedTime > maxSearchWaitTime && searchCount < maxSearchCount)
-  {
-    // Do search:
-    bTurning = false;
-    bGoForward = false;
-    Serial.println("Searching After=" + String(ElapsedTime));
-   // if (bTurningRightLast)
-    //  right();
-    //else
-     // left();
-    delay(200);
-    stop(1);
-    // Reset start time:
-    StartTime = CurrentTime;
-    searchCount++;
-  }
-*/
     serialEvent();
 }   // end of LOOP *****************************************************************************************************
 
@@ -233,49 +161,20 @@ void loop() {
 void stop(int period)
 {}
 
-void left()
+void walk(int pattern[])
 {
-  
-  walking = true;
+  attachServos();
+ //   walking = true;
   Serial.println("Person detected to the LEFT.");
   for (int n = 0; n < 4; n++) {
-    frontservo.write(walkleft[2*n]);  
-    backservo.write(walkleft[(2*n)+1]);
+    frontservo.write(pattern[2*n]);  
+    backservo.write(pattern[(2*n)+1]);
     delay(delayT);
   }
-  walking = false;
-  
+
+  detachServos();
+ // walking = false;
 }
-
-void right()
-{
-  
-  walking = true;
-  Serial.println("Person detected to the RIGHT.");
-  for (int n = 0; n < 4; n++) {
-    frontservo.write(walkright[2*n]);  
-    backservo.write(walkright[(2*n)+1]);
-    delay(delayT);
-  }
-  walking = false;
-  
-}
-
-void forward()
-{
-  
-  walking = true;
-  Serial.println("Person detected AHEAD.  Let's move FORWARD.");
-  for (int n = 0; n < 4; n++) {
-    frontservo.write(walkpattern[2*n]);  
-    backservo.write(walkpattern[(2*n)+1]);
-    delay(delayT);
-  }
-  walking = false;
-  
-}
-
-
   /*
     SerialEvent occurs whenever a new data comes in the hardware serial RX. This
     routine is run between each time loop() runs, so using delay inside loop can
@@ -298,3 +197,15 @@ void serialEvent(){
       
     }
   }
+
+void attachServos()
+{
+  frontservo.attach(9);
+  backservo.attach(10);
+}
+
+void detachServos()
+{
+  frontservo.detach();
+  backservo.detach();
+}
