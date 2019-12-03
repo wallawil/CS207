@@ -13,18 +13,25 @@
 SoftwareSerial BluePins(2, 3); // RX | TX
 Servo frontservo, backservo;
 
-// int walkpattern[] = {60, 120, 120, 60, 60, 120, 120, 60};
-char walkpattern[] = {60, 120, 120, 120, 120, 60, 60, 60};
+// servo pattern for walking in a straight line
+int walkpattern[] = {60, 120, 120, 120, 120, 60, 60, 60};
 
-char walkleft[] = {60, 90, 90, 90, 90, 60, 60, 60};
-//char walkright[] = {60, 90, 90, 90, 90, 60, 60, 60, 60};
+// int walkleft[] =  {50, 50, 90, 90, 50, 50, 90, 90};
 
-int delayT = 300;
+// this backs up and turns to the right
+// int walkright[] = {50, 130, 50, 90, 50, 130, 50, 90};
+int walkright[] = {90, 150, 90, 90, 90, 150, 90, 90};
+
+//
+// int walkleft[] = {130, 50, 130, 90, 130, 50, 130, 90};
+int walkleft[] = {90, 30, 90, 90, 90, 30, 90, 90};
+// int walkright[] = {130, 130, 90, 90, 130, 130, 90, 90};
+
+int delayT = 200;
 bool walking = false;
 
 String inputString = "";      // a String to hold incoming data
 bool stringComplete = false;  // whether the string is complete
-
 
 int maxFOV = 600;             // Field of view in pixels from centre
 
@@ -72,7 +79,8 @@ void loop() {
   //
   if (stringComplete) {
     Serial.flush();
-    
+
+    /*
     if (inputString.startsWith("FTF:person:"))
     {
       Serial.println("FTF PERSON DETECTED");
@@ -101,7 +109,7 @@ void loop() {
           Serial.println(sXVal + ":" + sYVal);
         }
       }
-    } 
+    } */
     
     //
     // Standard tensor flow person object detected. If using this note robot may get confused between different people in close proximity:
@@ -151,6 +159,7 @@ void loop() {
         forward();
       
       else if (xVal < -100)
+      // if (xVal < -100)
         left();
  
       else if (xVal > 100)
@@ -215,7 +224,7 @@ void loop() {
     searchCount++;
   }
 */
-    // serialEvent();
+    serialEvent();
 }   // end of LOOP *****************************************************************************************************
 
 
@@ -227,28 +236,29 @@ void stop(int period)
 void left()
 {
   
-//  walking = true;
- // Serial.println("Person detected to the LEFT.  Let's TURN LEFT.");
- // for (int n = 0; n < 4; n++) {
-//    frontservo.write(walkleft[2 * n]);
- //   backservo.write(walkleft[(2 * n) + 1]);
-  //  delay(delayT);
- // }
- // walking = false;
+  walking = true;
+  Serial.println("Person detected to the LEFT.");
+  for (int n = 0; n < 4; n++) {
+    frontservo.write(walkleft[2*n]);  
+    backservo.write(walkleft[(2*n)+1]);
+    delay(delayT);
+  }
+  walking = false;
+  
 }
 
 void right()
 {
-  /*
+  
   walking = true;
-   Serial.println("Person detected to the RIGHT.  Let's TURN RIGHT.");
+  Serial.println("Person detected to the RIGHT.");
   for (int n = 0; n < 4; n++) {
-    frontservo.write(walkleft[2 * n]);
+    frontservo.write(walkright[2*n]);  
+    backservo.write(walkright[(2*n)+1]);
     delay(delayT);
-    backservo.write(walkleft[(2 * n) + 1]);
-    delay(delayT);
-    }
-    walking = false;*/
+  }
+  walking = false;
+  
 }
 
 void forward()
@@ -258,18 +268,8 @@ void forward()
   Serial.println("Person detected AHEAD.  Let's move FORWARD.");
   for (int n = 0; n < 4; n++) {
     frontservo.write(walkpattern[2*n]);  
-    Serial.print("FRONT SERVO: Step number");
-    Serial.print(2*n);
-    Serial.print("   New servo position: ");
-    Serial.println(walkpattern[2*n]);
-    
     backservo.write(walkpattern[(2*n)+1]);
-    Serial.print("BACK SERVO: Step number");
-    Serial.print((2*n)+1);
-    Serial.print("   New servo position: ");
-    Serial.println(walkpattern[(2*n)+1]);
     delay(delayT);
-
   }
   walking = false;
   
@@ -282,7 +282,7 @@ void forward()
     delay response. Multiple bytes of data may be available.
   */
 void serialEvent(){
- if (walking == false){
+// if (walking == false){
   
     while (BluePins.available()) {
      
@@ -290,12 +290,11 @@ void serialEvent(){
       char inChar = (char)BluePins.read();
       // add it to the inputString:
       inputString += inChar;
-      Serial.println(inputString);
+      //Serial.println(inputString);
       // if the incoming character is a newline, set a flag so the main loop can
       // do something about it:
-if (inChar == '\n') 
+      if (inChar == '\n') 
         stringComplete = true;
       
     }
   }
-}
