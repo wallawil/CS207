@@ -5,12 +5,12 @@ The goal of this project is to improve upon an existing design for a four-legged
 
 Hopefully this gives a sense of the amount of experimentation and trouble-shooting involved:
 
-![Bluetooth Experiments](/BluetoothExperiments.png)
+![Bluetooth Experiments](/Images/BluetoothExperiments.png)
 
 Here is a picture of the disassembled robot:
 
-![Disassembled Robot](/parts.jpg)
+![Disassembled Robot](/Images/parts.jpg)
 
 Here is a picture of the assembled robot (circuit not finalized) facing off with a D&D miniature:
 
-![Bluetooth Experiments](/dnd.jpg)
+![Bluetooth Experiments](/Images/dnd.jpg)
