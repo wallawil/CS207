@@ -9,18 +9,18 @@ Click here for an in-depth guide on building this project from nothing.
 
 ## Quick-start Guide:
 
-####Preliminary work:
-Build the robot and circuit
-Pair the HC-05 with your smartphone
-Upload the Human-Tracking Creepy Robot sketch to your Arduino
-Install the Arduino Object Tracking app to your phone
+#### Preliminary work:
+* Build the robot and circuit
+* Pair the HC-05 with your smartphone
+* Upload the Human-Tracking Creepy Robot sketch to your Arduino
+* Install the Arduino Object Tracking app to your phone
 
-####Activating the robot:
-Supply power to your Arduino
-Open ArdObject Tracking app on your phone
-Attach the phone to the cell phone holder
+#### Activating the robot:
+* Supply power to your Arduino
+* Open ArdObject Tracking app on your phone
+* Attach the phone to the cell phone holder
 
-The robot will now follow humans.
+The robot will now follow humans.  If you want to stop the robot, remove the phone from its head and close the app.  This will sever the Bluetooth communication.
 
 
 
@@ -32,6 +32,6 @@ Blueprint (click for full size)    |  Printed Parts
 :-------------------------:|:-------------------------:
 ![](/Images/walker.png)  |  ![](/Images/printedparts.png)
 
-Slot the pieces together.  Slot your servos into the rectangular holes.  
-You will need M2 and M3 screws where indicated on the blueprint.
+* Slot the pieces together.  Slot your servos into the rectangular holes.  
+* You will need M2 and M3 screws where indicated on the blueprint.
 
