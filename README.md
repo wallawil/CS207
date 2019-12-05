@@ -28,12 +28,9 @@ In-depth Guide:
 
 Use your material of choice to create the robot's body and legs.  For this project, a 3D printer was used.  You may use another material if you prefer.
 
-![Parts](/Images/walker.png)
-![Disassembled Robot](/Images/parts.jpg)
-
 Blueprint             |  Printed Parts
 :-------------------------:|:-------------------------:
-![](/Images/walker.png)  |  ![](/Images/printedparts.jpg)
+![](/Images/walker.png)  |  ![](/Images/printedparts.png)
 
 **You can view the diary logs for a step-by-step commentary of my successes and many failures.**
 **The diary entries have way more detail; this readme is more of a splash page for the time being.**
