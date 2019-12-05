@@ -35,3 +35,13 @@ Blueprint (click for full size)    |  Printed Parts
 * Slot the pieces together.  Slot your servos into the rectangular holes.  
 * You will need M2 and M3 screws where indicated on the blueprint.
 
+insert image of assembled robot
+
+* Attach your Arduino and breadboard to the robot.  I used zip ties.  Elastic bands can be used as a temporarily solution.
+* Build the following circuit on your Arduino breadboard.  
+
+insert image of breadboard and photo beside
+
+* Supply two power sources to your robot.  This will allow both the HC-05 and servos to operate simultaneously.
+* Note that providing two 5V sources will likely be insufficient.  One of your sources should be at least 7.5V.
+
