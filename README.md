@@ -31,9 +31,9 @@ Use your material of choice to create the robot's body and legs.  For this proje
 ![Parts](/Images/walker.png)
 ![Disassembled Robot](/Images/parts.jpg)
 
-Solarized dark             |  Solarized Ocean
+Blueprint             |  Printed Parts
 :-------------------------:|:-------------------------:
-![](/Images/walker.png)  |  ![](/Images/parts.jpg)
+![](/Images/walker.png)  |  ![](/Images/printedparts.jpg)
 
 **You can view the diary logs for a step-by-step commentary of my successes and many failures.**
 **The diary entries have way more detail; this readme is more of a splash page for the time being.**
