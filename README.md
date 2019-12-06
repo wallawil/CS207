@@ -51,6 +51,10 @@ Blueprint (click for full size)    |  Printed Parts
 
 * Supply two power sources to your robot.  This will allow both the HC-05 and servos to operate simultaneously.
 * Note that providing two 5V sources will likely be insufficient.  One of your sources should be at least 7.5V, and it would be best to provide 9V to the barrel jack on the Arduino.
+* In the image below, I am using a USB power bank which is sitting on top of five AAs.
 
 ![](/Images/IMG_20191206_131620.jpg)
 
+## Facehugger tutorial ##
+If you have access to a 3D printer and want to make your robot look scary, find a 3D model to print!
+I recommend this [life-size facehugger model from Thingiverse!](https://www.thingiverse.com/thing:1116392)  
