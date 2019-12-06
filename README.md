@@ -76,6 +76,6 @@ Blueprint (click for full size)    |  Printed Parts
 ![](/Images/facepaint.jpg)
 
 * Snap the limbs and tail together.  The articulated joints might be a tight fit.  
-* If things don't fit together quite right, improvise!I had to use crazy glue and tape at times.  It's better than having a leg fall off in the middle of an experiment.  (Trust me!)
+* If things don't fit together quite right, improvise!  I had to use crazy glue and tape at times.  It's better than having a leg fall off in the middle of an experiment.  (Trust me!)
 
-![](/Images/facehugger.jpg)
+![](/Images/facehugger.png)
