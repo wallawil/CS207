@@ -67,4 +67,9 @@ Blueprint (click for full size)    |  Printed Parts
 
 ## Facehugger tutorial ##
 * If you have access to a 3D printer and want to make your robot look scary, find a 3D model to print!
-* I recommend this [life-size facehugger model from Thingiverse!](https://www.thingiverse.com/thing:1116392)  
+* I recommend this [life-size facehugger model from Thingiverse!](https://www.thingiverse.com/thing:1116392)
+* Be warned that several prints must be done for this big 40" model.  Here is just a portion:
+![](/Images/facelegs.png)
+* Paint it whatever colour you like, or leave it the same as it came out of the printer.  It's entirely up to you!
+![](/Images/facepaint.jpg)
+* Snap the limbs and tail together.  The articulated joints might be a tight fit; I had to use crazy glue and tape at times.  It's better than having a leg fall off in the middle of an experiment.  (Trust me!)
