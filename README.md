@@ -1,9 +1,12 @@
-Hello, reader!  This Readme file will attempt to walk you through my Human-Tracking Creepy Robot project.
+## Hello, reader! ##
 
-Click here for the quick-start guide.  This guide is appropriate for advanced users who have done some preliminary work.
+This Readme file will attempt to walk you through my Human-Tracking Creepy Robot project.
 
-Click here for an in-depth guide on building this project from nothing.
+Below, you will find two different guides.  
 
+The quick-start guide is appropriate for advanced users who have built the robot and just want to get it running.
+
+The in-depth guide is a complete walkthrough for beginners who are starting out from scratch.
 
 
 
@@ -43,5 +46,5 @@ insert image of assembled robot
 insert image of breadboard and photo beside
 
 * Supply two power sources to your robot.  This will allow both the HC-05 and servos to operate simultaneously.
-* Note that providing two 5V sources will likely be insufficient.  One of your sources should be at least 7.5V.
+* Note that providing two 5V sources will likely be insufficient.  One of your sources should be at least 7.5V, and it would be best to provide 9V to the barrel jack on the Arduino.
 
