@@ -42,7 +42,15 @@ Blueprint (click for full size)    |  Printed Parts
 * Build the following circuit on your Arduino breadboard.  
 
 ![](/Images/bready.png)
+
+* The left side of the board takes care of the HC-05.
+* The right side of the board takes care of the servos.
+* Make sure you implement voltage division so that only 3.3V is reaching the RX pin on the HC-05.
+
 ![](/Images/IMG_20191206_103548.jpg)
+
 * Supply two power sources to your robot.  This will allow both the HC-05 and servos to operate simultaneously.
 * Note that providing two 5V sources will likely be insufficient.  One of your sources should be at least 7.5V, and it would be best to provide 9V to the barrel jack on the Arduino.
+
+![](/Images/IMG_20191206_131620.jpg)
 
