@@ -2,7 +2,7 @@
 
 This Readme file will attempt to walk you through my Human-Tracking Creepy Robot project.
 
-Below, you will find two different guides.  
+You will find two different guides below.
 
 The quick-start guide is appropriate for advanced users who have built the robot and just want to get it running.
 
