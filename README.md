@@ -55,6 +55,16 @@ Blueprint (click for full size)    |  Printed Parts
 
 ![](/Images/IMG_20191206_131620.jpg)
 
+* From this repository, grab the Human-Tracking Creepy Robot Arduino sketch.
+* If you don't have it already, download the [Arduino IDE](https://www.arduino.cc/en/main/software) so you can upload the code to your board.
+
+
+* With power supplied to your Arduino, your HC-05 will be ready to establish a Bluetooth connection.  But first, you must have Bluetooth enabled on your phone, and you must pair with the HC-05.  Use the password "1234" if prompted; this is a default code.
+* On an Android smartphone, download the free app called [Arduino Object Detection Tracking](https://play.google.com/store/apps/details?id=com.studios.code.gem.ardobjecttracker&hl=en).
+* Open the Arduino Object Detection Tracking app.  Your phone will begin classifying nearby objects (e.g. bottle, TV, person).
+* Attach the phone to your robot.  If there are no people nearby, use yourself as a guinea pig and stand a few paces in front of your robot.  
+* Congratulations!  You have trained your robot to follow people!
+
 ## Facehugger tutorial ##
-If you have access to a 3D printer and want to make your robot look scary, find a 3D model to print!
-I recommend this [life-size facehugger model from Thingiverse!](https://www.thingiverse.com/thing:1116392)  
+* If you have access to a 3D printer and want to make your robot look scary, find a 3D model to print!
+* I recommend this [life-size facehugger model from Thingiverse!](https://www.thingiverse.com/thing:1116392)  
