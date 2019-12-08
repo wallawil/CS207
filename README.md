@@ -8,6 +8,9 @@ The quick-start guide is appropriate for advanced users who have built the robot
 
 The in-depth guide is a complete walkthrough for beginners who are starting out from scratch.
 
+#### Credit where credit is due: ####  
+This project would not exist without the fine work of GemCode Studios (both for their object-tracking app and their [DualMotorDriver sketch](https://github.com/GemcodeStudios/ObjectDetectionTracking/blob/master/PersonTrackerDualMotorDriver.ino)) as well as this Instructables project from edwindertien: [SimpleWalker, the 4-legged 2-servo walking robot](https://www.instructables.com/id/simpleWalker-4-legged-2-servo-walking-robot/).
+
 
 
 ## Quick-start Guide:
